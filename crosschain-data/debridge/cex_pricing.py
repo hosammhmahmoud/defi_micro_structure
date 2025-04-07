@@ -40,10 +40,6 @@ def asset_price(fsym, tsym, limit=10, freq="days", market="ccix"):
     return df
 
 
-df_eth = asset_price("ETH", "USDC", limit=20000, freq="minutes")
-df_sol = asset_price("SOL", "USDC", limit=20000, freq="minutes")
-df_bnb = asset_price("BNB", "USDC", limit=20000, freq="minutes")
-
 if __name__ == "__main__":
 
     api_key = os.getenv("api_key")
