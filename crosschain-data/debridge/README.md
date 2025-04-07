@@ -9,13 +9,16 @@ The following steps outline how to fetch, process, and store order data:
 1️⃣ Extract Data from Dune Analytics
 - Use Dune Analytics to retrieve order data (orderId, evt_time, chain) for both SRC and DEST events.
 - Export the data as a CSV file.
+
 2️⃣ Process Orders & Merge Data
 - Run the script: dune_order_processing.py
 - This merges the source (SRC) and destination (DEST) order data.
 - The processed data is pushed to BigQuery to maintain a complete list of processed order IDs.
+
 3️⃣ Identify Unprocessed Orders
 - Compare the processed orders in BigQuery with dln_data_v2 to filter out unprocessed orderIds.
 - This ensures that only new orders are fetched and processed.
+
 4️⃣ Fetch & Push Orders to BigQuery
 - Fetch new orders from the DLN API.
 - Process the data and push it to BigQuery for further analysis.
